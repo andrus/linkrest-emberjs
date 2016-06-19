@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/andrus/linkrest-emberjs.svg?branch=master)](https://travis-ci.org/andrus/linkrest-emberjs)
+
+
 # linkrest-emberjs
 
 Provides a LinkRest adapter to serve EmberJS-compatible responses.
