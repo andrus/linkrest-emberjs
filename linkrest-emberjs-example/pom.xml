@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.objectstyle.link.rest.emberjs</groupId>
-        <artifactId>link-rest-emberjs-parent</artifactId>
+        <groupId>org.objectstyle.linkrest.emberjs</groupId>
+        <artifactId>linkrest-emberjs-parent</artifactId>
         <version>0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>link-rest-emberjs-example</artifactId>
+    <artifactId>linkrest-emberjs-example</artifactId>
     <name>LinkRest EmberJS Bootique Example</name>
     <description>LinkRest EmberJS Bootique Example</description>
 
@@ -35,29 +35,45 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.objectstyle.link.rest.emberjs</groupId>
-                <artifactId>link-rest-emberjs</artifactId>
+                <groupId>org.objectstyle.linkrest.emberjs</groupId>
+                <artifactId>linkrest-emberjs</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.nhl.bootique</groupId>
+                <groupId>com.nhl.bootique.bom</groupId>
                 <artifactId>bootique-bom</artifactId>
                 <scope>import</scope>
                 <type>pom</type>
                 <version>0.17</version>
             </dependency>
-            
+            <dependency>
+                <groupId>org.apache.derby</groupId>
+                <artifactId>derby</artifactId>
+                <version>10.10.1.1</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <dependencies>
        <dependency>
-            <groupId>org.objectstyle.link.rest.emberjs</groupId>
-            <artifactId>link-rest-emberjs</artifactId>
+            <groupId>org.objectstyle.linkrest.emberjs</groupId>
+            <artifactId>linkrest-emberjs</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.nhl.bootique.cayenne</groupId>
+            <artifactId>bootique-cayenne</artifactId>
         </dependency>
         <dependency>
             <groupId>com.nhl.bootique.linkrest</groupId>
             <artifactId>bootique-linkrest</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.nhl.bootique.logback</groupId>
+            <artifactId>bootique-logback</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.derby</groupId>
+            <artifactId>derby</artifactId>
         </dependency>
     </dependencies>
 </project>

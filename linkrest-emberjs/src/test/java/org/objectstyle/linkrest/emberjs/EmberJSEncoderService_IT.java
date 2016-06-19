@@ -1,4 +1,4 @@
-package com.nhl.link.rest.emberjs;
+package org.objectstyle.linkrest.emberjs;
 
 import com.fasterxml.jackson.core.JsonEncoding;
 import com.fasterxml.jackson.core.JsonGenerator;

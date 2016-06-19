@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.objectstyle.link.rest.emberjs</groupId>
-        <artifactId>link-rest-emberjs-parent</artifactId>
+        <groupId>org.objectstyle.linkrest.emberjs</groupId>
+        <artifactId>linkrest-emberjs-parent</artifactId>
         <version>0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>link-rest-emberjs</artifactId>
+    <artifactId>linkrest-emberjs</artifactId>
     <name>LinkRestAdapter for EmberJS</name>
     <description>LinkRestAdapter for EmberJS</description>
 

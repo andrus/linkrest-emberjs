@@ -1,4 +1,4 @@
-package com.nhl.link.rest.emberjs;
+package org.objectstyle.linkrest.emberjs;
 
 import com.nhl.link.rest.runtime.encoder.IAttributeEncoderFactory;
 import com.nhl.link.rest.runtime.encoder.IStringConverterFactory;
