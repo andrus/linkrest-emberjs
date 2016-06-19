@@ -11,4 +11,18 @@
 		<module>linkrest-emberjs</module>
 		<module>linkrest-emberjs-example</module>
 	</modules>
+
+	<scm>
+		<connection>scm:git:https://github.com/andrus/linkrest-emberjs</connection>
+		<developerConnection>scm:git:ssh://git@github.com/andrus/linkrest-emberjs</developerConnection>
+		<url>https://github.com/andrus/linkrest-emberjs</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>linkrest-snapshots</id>
+			<url>http://maven.objectstyle.org/nexus/content/repositories/linkrest-snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>
