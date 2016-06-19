@@ -1,7 +1,7 @@
 package org.objectstyle.linkrest.emberjs;
 
 import com.nhl.link.rest.runtime.adapter.LinkRestAdapter;
-import com.nhl.link.rest.runtime.encoder.EncoderService;
+import com.nhl.link.rest.runtime.encoder.IEncoderService;
 import org.apache.cayenne.di.Binder;
 
 import javax.ws.rs.core.Feature;
@@ -14,7 +14,7 @@ public class EmberJSAdapter implements LinkRestAdapter {
 
     @Override
     public void contributeToRuntime(Binder binder) {
-        binder.bind(EncoderService.class).to(EmberJSEncoderService.class);
+        binder.bind(IEncoderService.class).to(EmberJSEncoderService.class);
     }
 
     @Override
