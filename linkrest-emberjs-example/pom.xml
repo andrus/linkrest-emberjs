@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.objectstyle.link.rest.emberjs</groupId>
+        <artifactId>link-rest-emberjs-parent</artifactId>
+        <version>0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>link-rest-emberjs-example</artifactId>
+    <name>LinkRest EmberJS Bootique Example</name>
+    <description>LinkRest EmberJS Bootique Example</description>
+
+     <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>linkrest-snapshots</id>
+            <name>LinkRest Snapshots</name>
+            <url>http://maven.objectstyle.org/nexus/content/repositories/linkrest-snapshots</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+    </repositories>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.objectstyle.link.rest.emberjs</groupId>
+                <artifactId>link-rest-emberjs</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.nhl.bootique</groupId>
+                <artifactId>bootique-bom</artifactId>
+                <scope>import</scope>
+                <type>pom</type>
+                <version>0.17</version>
+            </dependency>
+            
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+       <dependency>
+            <groupId>org.objectstyle.link.rest.emberjs</groupId>
+            <artifactId>link-rest-emberjs</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.nhl.bootique.linkrest</groupId>
+            <artifactId>bootique-linkrest</artifactId>
+        </dependency>
+    </dependencies>
+</project>
