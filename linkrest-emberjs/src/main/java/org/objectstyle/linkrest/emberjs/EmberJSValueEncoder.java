@@ -7,11 +7,11 @@ import com.nhl.link.rest.encoder.EncoderVisitor;
 
 import java.io.IOException;
 
-public class EmberJSToManyValueEncoder implements Encoder {
+public class EmberJSValueEncoder implements Encoder {
 
     private EntityProperty idEncoder;
 
-    public EmberJSToManyValueEncoder(EntityProperty idEncoder) {
+    public EmberJSValueEncoder(EntityProperty idEncoder) {
         this.idEncoder = idEncoder;
     }
 

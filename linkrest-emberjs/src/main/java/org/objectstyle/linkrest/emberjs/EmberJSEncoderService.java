@@ -6,7 +6,6 @@ import com.nhl.link.rest.encoder.CollectionEncoder;
 import com.nhl.link.rest.encoder.DataResponseEncoder;
 import com.nhl.link.rest.encoder.Encoder;
 import com.nhl.link.rest.encoder.EncoderFilter;
-import com.nhl.link.rest.encoder.EntityToOneEncoder;
 import com.nhl.link.rest.encoder.ListEncoder;
 import com.nhl.link.rest.encoder.PropertyMetadataEncoder;
 import com.nhl.link.rest.meta.LrRelationship;
@@ -60,7 +59,16 @@ public class EmberJSEncoderService extends EncoderService {
     }
 
     @Override
+    protected Encoder toOneEncoder(ResourceEntity<?> resourceEntity, LrRelationship relationship) {
+        EntityProperty idEncoder = attributeEncoderFactory.getIdProperty(resourceEntity);
+        Encoder valueEncoder = new EmberJSIdKeyValueEncoder(idEncoder);
+        return filteredEncoder(valueEncoder, resourceEntity);
+    }
+
+    @Override
     protected Encoder nestedToManyEncoder(ResourceEntity<?> resourceEntity) {
+
+        // unlike super we can't support 'mapBy'
         if (resourceEntity.getMapBy() != null) {
             throw new UnsupportedOperationException("'mapBy' is not supported by EmberJS adapter.");
         }
@@ -82,17 +90,7 @@ public class EmberJSEncoderService extends EncoderService {
 
     protected Encoder toManyElementEncoder(ResourceEntity<?> resourceEntity) {
         EntityProperty idEncoder = attributeEncoderFactory.getIdProperty(resourceEntity);
-        Encoder encoder = new EmberJSToManyValueEncoder(idEncoder);
+        Encoder encoder = new EmberJSValueEncoder(idEncoder);
         return filteredEncoder(encoder, resourceEntity);
     }
-
-    @Override
-    protected Encoder toOneEncoder(ResourceEntity<?> resourceEntity, LrRelationship relationship) {
-        EntityProperty idEncoder = attributeEncoderFactory.getIdProperty(resourceEntity);
-
-        Encoder valueEncoder = new EmberJSToOneValueEncoder(idEncoder);
-        Encoder compositeValueEncoder = new EntityToOneEncoder(valueEncoder);
-        return filteredEncoder(compositeValueEncoder, resourceEntity);
-    }
-
 }
