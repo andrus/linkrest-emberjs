@@ -17,9 +17,6 @@ import java.io.OutputStream;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
 
-/**
- * Created by andrus on 6/19/16.
- */
 public class EmberJSSimpleResponseWriter implements MessageBodyWriter<SimpleResponse> {
 
     private IJacksonService jacksonService;
